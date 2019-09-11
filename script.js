@@ -1,5 +1,6 @@
 //create global variable
 let sessions
+let cartCount = 0
 
 function loadPage() {
 fetch("sessions.json")
@@ -32,6 +33,16 @@ function addToCart(sessionName) {
     
     document.querySelector('ul#cart')
         .append(item)
+    
+    cartCount++
+    let cartCountElem = document.querySelector('span#cartCount')
+    cartCountElem.textContent = cartCount
+    if (cartCount >= 3) {
+        cartCountElem.style.backgroundColor = "green"
+    }
+    else if (cartCount > 0) {
+        cartCountElem.style.backgroundColor = "aqua"
+    }
 }
 
 
