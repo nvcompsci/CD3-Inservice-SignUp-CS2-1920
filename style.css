@@ -11,3 +11,7 @@ article div {
     flex-wrap: wrap;
     justify-content: center;
 }
+
+div.empty {
+    background-color: #eee;
+}
